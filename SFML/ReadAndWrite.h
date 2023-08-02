@@ -4,7 +4,7 @@
 #include<iostream>
 using namespace std;
 
-//переделать конструктор, write работает не корректно.
+
 
 class ReadAndWrite {
 private:
@@ -12,27 +12,23 @@ private:
 	string nameOfFileY;
 	string StringPositionX = "0";
 	string stringPositionY = "0";
-	int Xvalue = 0;
-
 	
 
-	
 	ifstream readFile;
 	ofstream writeX;
 	ofstream writeY;
-	
+	int Xvalue = 0;
 	int Yvalue=0;
 public:
 	
-	ReadAndWrite();
+	ReadAndWrite(string, string);
 
-	void getX();
-	void getY();
+	
 
-	void read();
-	void write(sf::Sprite,string,string);
+	void read(sf::Sprite &); //for write coordinate to file
+	void write(sf::Sprite);  // for read coordinate from file
 
-	void startPosition(sf::Sprite &);
+	
 
 };
 
