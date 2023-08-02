@@ -21,7 +21,7 @@ void ReadAndWrite::write(sf::Sprite sp,string sX,string sY) {
 }
 
 void ReadAndWrite::read() {
-
+	
 	readFile.open(nameOfFileX);
 	if (readFile)
 		readFile >> StringPositionX;
@@ -37,18 +37,17 @@ void ReadAndWrite::read() {
 }
 
 
-int ReadAndWrite::getX() {
+void ReadAndWrite::getX() {
 	Xvalue = std::stoi(StringPositionX);
-	return Xvalue;
+	
 }
 
-int ReadAndWrite::getY() {
+void ReadAndWrite::getY() {
 	Xvalue = std::stoi(stringPositionY);
-	return Yvalue;
+	
 }
 void ReadAndWrite::startPosition(sf::Sprite& sp) {
 
-	sp.setPosition(getX(), getY());
-
+	
 
 }

@@ -4,28 +4,30 @@
 #include<iostream>
 using namespace std;
 
-
+//переделать конструктор, write работает не корректно.
 
 class ReadAndWrite {
 private:
 	string nameOfFileX;
 	string nameOfFileY;
+	string StringPositionX = "0";
+	string stringPositionY = "0";
+	int Xvalue = 0;
 
 	
 
-	string StringPositionX{};
-	string stringPositionY{};
+	
 	ifstream readFile;
 	ofstream writeX;
 	ofstream writeY;
 	
 	int Yvalue=0;
 public:
-	int Xvalue=0;
+	
 	ReadAndWrite();
 
-	int getX();
-	int getY();
+	void getX();
+	void getY();
 
 	void read();
 	void write(sf::Sprite,string,string);
