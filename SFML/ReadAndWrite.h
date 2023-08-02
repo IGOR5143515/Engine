@@ -8,15 +8,16 @@ using namespace std;
 
 class ReadAndWrite {
 private:
-	ifstream read;
-	ofstream write;
+	ifstream readFile;
+	ofstream writeX;
+	ofstream writeY;
 	int Xvalue;
 	int Yvalue;
 public:
-	ReadAndWrite(string,sf::Sprite);
+	ReadAndWrite();
 
 	void read();
-	void write();
+	void write(sf::Sprite,string,string);
 
 
 
