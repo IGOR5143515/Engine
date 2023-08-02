@@ -5,7 +5,8 @@ ReadAndWrite::ReadAndWrite() {
 }
 
 void ReadAndWrite::write(sf::Sprite sp,string sX,string sY) {
-
+	nameOfFileX = sX;
+	nameOfFileY = sY;
 	writeX.open(sX);
 	writeY.open(sY);
 
@@ -18,4 +19,21 @@ void ReadAndWrite::write(sf::Sprite sp,string sX,string sY) {
 
 
 }
+
+void ReadAndWrite::read() {
+
+	readFile.open(nameOfFileX);
+	if (readFile)
+		readFile >> StringPositionX;
+
+	readFile.close();
+
+	readFile.open(nameOfFileY);
+
+	if (readFile)
+		readFile >> stringPositionY;
+
+	readFile.close();
+}
+
 

@@ -8,6 +8,12 @@ using namespace std;
 
 class ReadAndWrite {
 private:
+	string nameOfFileX;
+	string nameOfFileY;
+
+
+	string StringPositionX;
+	string stringPositionY;
 	ifstream readFile;
 	ofstream writeX;
 	ofstream writeY;

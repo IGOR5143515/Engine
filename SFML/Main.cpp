@@ -18,6 +18,9 @@ int main()
 	ReadAndWrite x;
 
 	x.write(sprite,"file1", "file2");
+	ReadAndWrite y;
+
+	x.write(sprite, "file3", "file4");
 	while (w.isOpen()) {
 		w.clear();
 		w.draw(sprite);
