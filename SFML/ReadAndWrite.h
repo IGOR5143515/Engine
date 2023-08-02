@@ -10,8 +10,8 @@ class ReadAndWrite {
 private:
 	string nameOfFileX;
 	string nameOfFileY;
-	string StringPositionX = "0";
-	string stringPositionY = "0";
+	string StringPositionX = "0";// ! 
+	string stringPositionY = "0";// !
 	
 
 	ifstream readFile;

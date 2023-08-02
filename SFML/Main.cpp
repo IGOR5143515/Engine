@@ -18,8 +18,8 @@ int main()
 	sprite.setTexture(texture);
 	sprite.setScale(0.25,0.25);
 	ReadAndWrite x("a","b");
+   // x.read(sprite);
 	
-	x.read(sprite);
 //x.write(sprite);
 	
 		
