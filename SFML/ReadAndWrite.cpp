@@ -37,3 +37,12 @@ void ReadAndWrite::read() {
 }
 
 
+int ReadAndWrite::getX() {
+	Xvalue = std::stoi(StringPositionX);
+	return Xvalue;
+}
+
+int ReadAndWrite::getY() {
+	Xvalue = std::stoi(stringPositionY);
+	return Yvalue;
+}

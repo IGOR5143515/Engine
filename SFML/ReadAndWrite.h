@@ -22,6 +22,8 @@ private:
 public:
 	ReadAndWrite();
 
+	void stringToInt();
+
 	void read();
 	void write(sf::Sprite,string,string);
 
