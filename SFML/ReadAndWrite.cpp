@@ -46,3 +46,9 @@ int ReadAndWrite::getY() {
 	Xvalue = std::stoi(stringPositionY);
 	return Yvalue;
 }
+void ReadAndWrite::startPosition(sf::Sprite& sp) {
+
+	sp.setPosition(getX(), getY());
+
+
+}

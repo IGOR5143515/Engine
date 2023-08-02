@@ -11,23 +11,26 @@ private:
 	string nameOfFileX;
 	string nameOfFileY;
 
+	
 
-	string StringPositionX;
-	string stringPositionY;
+	string StringPositionX{};
+	string stringPositionY{};
 	ifstream readFile;
 	ofstream writeX;
 	ofstream writeY;
-	int Xvalue;
-	int Yvalue;
+	
+	int Yvalue=0;
 public:
+	int Xvalue=0;
 	ReadAndWrite();
 
-	void stringToInt();
+	int getX();
+	int getY();
 
 	void read();
 	void write(sf::Sprite,string,string);
 
-
+	void startPosition(sf::Sprite &);
 
 };
 

@@ -16,12 +16,13 @@ int main()
 	sprite.setPosition(200, 500);
 	sprite.setTexture(texture);
 	ReadAndWrite x;
-
-	x.write(sprite,"file1", "file2");
-	ReadAndWrite y;
-
-	x.write(sprite, "file3", "file4");
+	x.read();
+	std::cout << x.getX();
+	
 	while (w.isOpen()) {
+
+		x.write(sprite, "1", "2");
+
 		w.clear();
 		w.draw(sprite);
 		w.display();
