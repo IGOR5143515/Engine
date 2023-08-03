@@ -12,18 +12,19 @@ int main()
 	RenderWindow w(sf::VideoMode(1280,720), "Game");
     bool isMove = false;
 	Texture texture;
-	texture.loadFromFile("C:/Users/IGOR/source/repos/Engine/resorses/img2.png.png");
+	texture.loadFromFile("C:/Users/User/source/repos/SFML/resorses/img2.png.png");
 	Sprite sprite;
 	
 	sprite.setTexture(texture);
 	sprite.setScale(0.25,0.25);
-	ReadAndWrite x("a","b");
-   // x.read(sprite);
-	
-//x.write(sprite);
+	ReadAndWrite x("1.txt","2.txt");
+  
+   
+    x.read(sprite);
 	
 		
 	while (w.isOpen()) {
+       
        
         Vector2i pixelPos = Mouse::getPosition(w);
         Vector2f pos = w.mapPixelToCoords(pixelPos);
@@ -59,11 +60,6 @@ int main()
 
 
         }
-
-
-		    
-		
-		
 
 
 

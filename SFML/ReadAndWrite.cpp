@@ -1,7 +1,6 @@
 #include "ReadAndWrite.h"
 
-ReadAndWrite::ReadAndWrite(string sX, string sY):
-	writeX(sX),writeY(sY){
+ReadAndWrite::ReadAndWrite(string sX, string sY){
 	nameOfFileX = sX;
 	nameOfFileY = sY;
 
@@ -23,24 +22,47 @@ void ReadAndWrite::write(sf::Sprite s) {
 }
 
 void ReadAndWrite::read(sf::Sprite& s) {
-	
 	readFile.open(nameOfFileX);
-	if (readFile)
-		readFile >> StringPositionX;
+	
+	if (readFile.is_open()) {
 
-	readFile.close();
+		
+		while (std::getline(readFile, posX)) {
+			
+			cout << posX << endl;
+			
+		}
+		
+
+		readFile.close();
+
+	}
+	else {
+		cout << "NOO" << endl;
+	}
 
 	readFile.open(nameOfFileY);
 
-	if (readFile)
-		readFile >> stringPositionY;
+	if (readFile.is_open()) {
 
-	readFile.close();
+		
+		while (std::getline(readFile, posY)) {
 
-	Xvalue = std::stoi(StringPositionX);
-	Yvalue = std::stoi(stringPositionY);
+			cout<<"    " << posY << endl;
+		}
 
+
+		readFile.close();
+
+	}
+	else {
+		cout << "NOO" << endl;
+	}
+	Xvalue = std::stoi(posX);
+	Yvalue = std::stoi(posY);
+	
 	s.setPosition(Xvalue, Yvalue);
+
 }
 
 

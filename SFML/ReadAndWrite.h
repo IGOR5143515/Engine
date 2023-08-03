@@ -10,9 +10,10 @@ class ReadAndWrite {
 private:
 	string nameOfFileX;
 	string nameOfFileY;
-	string StringPositionX = "0";// ! 
-	string stringPositionY = "0";// !
-	
+	std::string PosX;
+	std::string PosY;
+	string posX;
+	string posY;
 
 	ifstream readFile;
 	ofstream writeX;
@@ -20,7 +21,7 @@ private:
 	int Xvalue = 0;
 	int Yvalue=0;
 public:
-	
+	ReadAndWrite() {};
 	ReadAndWrite(string, string);
 
 	
