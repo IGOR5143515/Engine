@@ -26,6 +26,7 @@ public:
 
 	
 
+
 	void read(sf::Sprite &); //for write coordinate to file
 	void write(sf::Sprite);  // for read coordinate from file
 
