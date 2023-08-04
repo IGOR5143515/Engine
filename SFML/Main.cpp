@@ -20,6 +20,7 @@ int main()
 	ReadAndWrite x("1.txt","2.txt");
   
    
+
     x.read(sprite);
 	
 		
