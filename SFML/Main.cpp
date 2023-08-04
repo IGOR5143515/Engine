@@ -16,7 +16,7 @@ public:
 		sprite.setPosition(1, 1);
 	}
 
-	Sprite getSprite() { return sprite; }
+	Sprite& getSprite() { return sprite; }
 
 
 };
@@ -29,7 +29,7 @@ void foo(std::vector<test> arr,RenderWindow &w) {
 }
 int main()
 {
-	
+	bool isMove = false;
 	RenderWindow w(sf::VideoMode(1280,720), "Game");
 	test q("C:/Users/User/source/repos/SFML/resorses/img3.jpg");
 	test two("C:/Users/User/source/repos/SFML/resorses/img2.png.png");
@@ -38,43 +38,20 @@ int main()
 
 
 	ReadAndWrite x("1.txt","2.txt");
-	
+	x.read(arr[0].getSprite());
     
 	
 	while (w.isOpen()) {
-		
-        
-		w.clear();
-		foo(arr,w);
-		w.display();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         sf::Event event;
         while (w.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
                 w.close();
+	
         }
+
+		w.clear();
+		foo(arr, w);
+		w.display();
 	}
 }
