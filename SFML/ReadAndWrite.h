@@ -21,7 +21,7 @@ private:
 	int Xvalue = 0;
 	int Yvalue=0;
 public:
-	ReadAndWrite() {};
+	
 	ReadAndWrite(string, string);
 
 	
