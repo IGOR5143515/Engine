@@ -10,8 +10,6 @@ class ReadAndWrite {
 private:
 	string nameOfFileX;
 	string nameOfFileY;
-	std::string PosX;
-	std::string PosY;
 	string posX;
 	string posY;
 
@@ -23,7 +21,10 @@ private:
 public:
 	
 	ReadAndWrite(string, string);
-
+	ReadAndWrite() {
+		nameOfFileX = "0";
+		nameOfFileY = "0";
+	}
 	
 
 

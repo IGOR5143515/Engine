@@ -1,9 +1,9 @@
 #include "ReadAndWrite.h"
 
-ReadAndWrite::ReadAndWrite(string sX, string sY){
+ReadAndWrite::ReadAndWrite(string sX, string sY):readFile("opent.txt") {
 	nameOfFileX = sX;
 	nameOfFileY = sY;
-
+	
 }
 
 void ReadAndWrite::write(sf::Sprite s) {
