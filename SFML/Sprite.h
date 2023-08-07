@@ -26,7 +26,7 @@ public:
 	Sprite(string,string,string);
 	sf::Sprite getSprite();
 	void read(sf::Sprite&);
-	void write(sf::Sprite);
+	void write(sf::Sprite );
 
 };
 

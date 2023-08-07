@@ -7,7 +7,7 @@ class test
 {
 private:
 	std::vector<Sprite*>arr;
-	
+	bool isMove = false;
 public:
 	test(){}
 
