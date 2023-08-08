@@ -17,5 +17,5 @@ t.addSprite("C:/Users/IGOR/source/repos/Engine/resorses/img1.png.png",
 	"4.txt", "3.txt");
 	
 	t.start(w);
-	
+	return 0;
 }
