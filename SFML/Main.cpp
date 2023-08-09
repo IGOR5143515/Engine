@@ -1,8 +1,5 @@
 ﻿#include <SFML/Graphics.hpp>
-
-
-
-#include"test.h"
+#include"Engine.h"
 
 
 
@@ -10,7 +7,7 @@ int main()
 {
 	sf::RenderWindow w(sf::VideoMode(1280,720),"Game");
 	
-	test t;
+	Engine t;
 t.addSprite("resorses/img2.png.png",
 		"1.txt", "2.txt");
 t.addSprite("resorses/img1.png.png",
