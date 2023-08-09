@@ -1,8 +1,9 @@
 #pragma once
+#include<iostream>
 #include"Engine.h"
 void Engine::addSprite(string link, string x, string y) {
 
-	Sprite* a = new Sprite(link, x, y);
+	Sprite* a = new Sprite(link);
 
 	arr.push_back(a);
 
@@ -11,6 +12,25 @@ void Engine::addSprite(string link, string x, string y) {
 void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
+		float x = hero.sprite.getPosition().x;
+		float y = hero.sprite.getPosition().y;
+		if (hero.isMove) {
+			
+			hero.distance = sqrt((hero.tempX - hero.sprite.getPosition().x) * (hero.tempX - hero.sprite.getPosition().x) + (hero.tempY - hero.sprite.getPosition().y) * (hero.tempY - hero.sprite.getPosition().y));
+			
+			
+			if (hero.distance > 2) {
+				x += 0.10 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
+				y += 0.10 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
+				hero.sprite.setPosition(x, y);
+			}
+			else 
+				hero.isMove = false;
+			
+			std::cout << hero.distance << std::endl;
+		}
+
+
 
 		input(event,w);
 		draw(w);
@@ -40,9 +60,16 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 	{
 		if (event.type == sf::Event::Closed)
 			w.close();
-
+		if(event.type==sf::Event::MouseButtonPressed)
+			if (event.key.code == sf::Mouse::Left) {
+				hero.isMove = true;
+				hero.tempX = pos.x;
+				hero.tempY = pos.y;
+				
+			}
 		
 
 	}
+
 
 }

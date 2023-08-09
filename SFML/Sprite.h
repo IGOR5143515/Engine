@@ -6,27 +6,18 @@ using namespace std;
 
 class Sprite
 {
-private:
+protected:
+
 	sf::Texture texture;
 	sf::Sprite sprite;
-	std::string nameOfFileX;
-	std::string nameOfFileY;
-	string posX;
-	string posY;
+private:
 
-	std::ifstream readFile;
-	ofstream writeX;
-	ofstream writeY;
-
-	int Xvalue;
-	int Yvalue;
 	
 public:
 	Sprite() {}
-	Sprite(string,string,string);
+	Sprite(string);
 	sf::Sprite getSprite();
-	void read(sf::Sprite&);
-	void write(sf::Sprite );
+
 
 };
 

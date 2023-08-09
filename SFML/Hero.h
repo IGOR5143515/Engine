@@ -3,6 +3,14 @@
 class Hero :
     public Sprite
 {
-
+private:
+    bool isMove=false;
+    int tempX=0;
+    int tempY=0;
+    int distance{};
+public:
+    friend class Engine;
+    Hero(string,int,int);
+    Hero();
 };
 

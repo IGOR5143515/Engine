@@ -1,13 +1,14 @@
 #pragma once
 #include"Sprite.h"
-
+#include"Hero.h"
 
 
 class Engine
 {
 private:
-	std::vector<Sprite*>arr;
-	bool isMove = false;
+	Hero hero;
+	std::vector<Sprite*>arr{&hero};
+	
 public:
 	Engine(){}
 
