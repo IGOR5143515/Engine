@@ -11,5 +11,6 @@ private:
 public:
 	Scenes(string, sf::Vector2f, sf::Vector2f);
 
+
 };
 
