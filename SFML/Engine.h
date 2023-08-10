@@ -8,9 +8,10 @@ class Engine
 private:
 	Hero hero;
 	std::vector<Sprite*>arr{&hero};
+	Sprite back;
 	
 public:
-	Engine(){}
+	Engine();
 
 	void addSprite(string, string, string);
 
