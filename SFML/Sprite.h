@@ -15,6 +15,7 @@ private:
 	
 public:
 	friend class Scenes;
+	
 	Sprite() {}
 	Sprite(string);
 	sf::Sprite getSprite();

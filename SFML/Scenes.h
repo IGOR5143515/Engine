@@ -1,5 +1,6 @@
 #pragma once
-#include"Engine.h"
+#include"Sprite.h"
+
 class Scenes
 {
 private:
@@ -9,16 +10,13 @@ private:
 	Sprite background;
 	
 public:
+	Scenes();
 	Scenes(string, sf::Vector2f, sf::Vector2f);
 
-<<<<<<< HEAD
-
-
-
-=======
+	Scenes(string);
 	sf::Sprite getSpriteBack() { return background.getSprite(); }
 
-	void setBackground(Sprite s);
->>>>>>> work
+	void setBackground(Sprite &);
+
 };
 

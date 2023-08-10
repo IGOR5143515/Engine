@@ -1,14 +1,17 @@
 #pragma once
 #include"Sprite.h"
 #include"Hero.h"
+#include"Scenes.h"
 
 
 class Engine
 {
 private:
+	
+	Sprite backgound;
 	Hero hero;
 	std::vector<Sprite*>arr{&hero};
-	Sprite back;
+	Scenes sc;
 	
 public:
 	Engine();

@@ -28,7 +28,7 @@ void Engine::start(sf::RenderWindow &w) {
 			else 
 				hero.isMove = false;
 			
-			std::cout << hero.distance << std::endl;
+			
 		}
 
 
@@ -48,7 +48,7 @@ void Engine::draw(sf::RenderWindow &w) {
 
 void Engine::drawArray(sf::RenderWindow& w) {
 
-	w.draw(back.getSprite());
+	w.draw(backgound.getSprite());
 
 	for (size_t i = 0; i < arr.size(); i++)
 	{
@@ -69,7 +69,8 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 				hero.isMove = true;
 				hero.tempX = pos.x;
 				hero.tempY = pos.y;
-				back.
+				
+				sc.setBackground(backgound);
 
 			}
 		
@@ -79,8 +80,9 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 
 }
 
-Engine::Engine():back("resorses/back1.jpg") {
+Engine::Engine():backgound("resorses/back1.jpg"),sc("resorses/back2.jpg") 
+{
+
 
 }
-
 
