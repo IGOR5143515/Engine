@@ -12,6 +12,7 @@ void Engine::addSprite(string link, string x, string y) {
 void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
+
 		float x = hero.sprite.getPosition().x;
 		float y = hero.sprite.getPosition().y;
 		if (hero.isMove) {
