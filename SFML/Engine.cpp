@@ -20,8 +20,8 @@ void Engine::start(sf::RenderWindow &w) {
 			
 			
 			if (hero.distance > 2) {
-				x += 0.10 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
-				y += 0.10 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
+				x += 0.25 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
+				y += 0.25 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
 				hero.sprite.setPosition(x, y);
 			}
 			else 
