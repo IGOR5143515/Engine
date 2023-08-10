@@ -46,6 +46,9 @@ void Engine::draw(sf::RenderWindow &w) {
 }
 
 void Engine::drawArray(sf::RenderWindow& w) {
+
+	w.draw(back.getSprite());
+
 	for (size_t i = 0; i < arr.size(); i++)
 	{
 		w.draw(arr[i]->getSprite());
@@ -65,7 +68,8 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 				hero.isMove = true;
 				hero.tempX = pos.x;
 				hero.tempY = pos.y;
-				
+				back.
+
 			}
 		
 
@@ -73,3 +77,9 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 
 
 }
+
+Engine::Engine():back("resorses/back1.jpg") {
+
+}
+
+

@@ -11,5 +11,8 @@ private:
 public:
 	Scenes(string, sf::Vector2f, sf::Vector2f);
 
+	sf::Sprite getSpriteBack() { return background.getSprite(); }
+
+	void setBackground(Sprite s);
 };
 

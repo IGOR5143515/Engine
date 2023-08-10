@@ -6,6 +6,8 @@ Scenes::Scenes(string link, sf::Vector2f tr1, sf::Vector2f tr2):background(link)
 	trigger2.setPosition(tr2);
 
 
+}
 
-
+void Scenes::setBackground(Sprite s) {
+	s.getSprite() = background.getSprite();
 }
