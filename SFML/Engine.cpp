@@ -12,6 +12,7 @@ void Engine::addSprite(string link, string x, string y) {
 void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
+		
 
 		float x = hero.sprite.getPosition().x;
 		float y = hero.sprite.getPosition().y;
@@ -30,9 +31,12 @@ void Engine::start(sf::RenderWindow &w) {
 			
 			
 		}
+		
+		
 
+		
 
-
+		
 		input(event,w);
 		draw(w);
 	}
@@ -48,8 +52,9 @@ void Engine::draw(sf::RenderWindow &w) {
 
 void Engine::drawArray(sf::RenderWindow& w) {
 
-	w.draw(backgound.getSprite());
-
+	w.draw(baseScene.getSpriteBack());
+	w.draw(baseScene.trigger1);
+	w.draw(baseScene.trigger2);
 	for (size_t i = 0; i < arr.size(); i++)
 	{
 		w.draw(arr[i]->getSprite());
@@ -70,17 +75,17 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 				hero.tempX = pos.x;
 				hero.tempY = pos.y;
 				
-				sc.setBackground(backgound);
+				
 
 			}
 		
-
+		
 	}
 
 
 }
 
-Engine::Engine():backgound("resorses/back1.jpg"),sc("resorses/back2.jpg") 
+Engine::Engine() :baseScene("resorses/back1.jpg", sf::Vector2f(500,0), sf::Vector2f(1110,500))
 {
 
 

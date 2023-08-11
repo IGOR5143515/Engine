@@ -8,10 +8,9 @@ class Engine
 {
 private:
 	
-	Sprite backgound;
 	Hero hero;
 	std::vector<Sprite*>arr{&hero};
-	Scenes sc;
+	Scenes baseScene;
 	
 public:
 	Engine();
