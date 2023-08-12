@@ -10,3 +10,8 @@ Sprite::Sprite(string link ) {
 	sprite.setTexture(texture);
 
 }
+void Sprite::setSprite(string link) {
+
+	texture.loadFromFile(link);
+	sprite.setTexture(texture);
+}

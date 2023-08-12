@@ -12,14 +12,14 @@ protected:
 	sf::Sprite sprite;
 private:
 
-	
+
 public:
 	friend class Scenes;
-	
+
 	Sprite() {}
 	Sprite(string);
 	sf::Sprite getSprite();
-
+	void setSprite(string link);
 
 };
 

@@ -13,7 +13,7 @@ void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
 		
-
+		
 		float x = hero.sprite.getPosition().x;
 		float y = hero.sprite.getPosition().y;
 		if (hero.isMove) {
@@ -22,9 +22,12 @@ void Engine::start(sf::RenderWindow &w) {
 			
 			
 			if (hero.distance > 2) {
+				
+				
 				x += 1 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
 				y += 1 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
 				hero.sprite.setPosition(x, y);
+				std::cout << hero.distance;
 			}
 			else 
 				hero.isMove = false;
@@ -33,10 +36,9 @@ void Engine::start(sf::RenderWindow &w) {
 		}
 		
 		
+	
 
-		
-
-		
+		baseScene.ifcoll(hero, baseScene);
 		input(event,w);
 		draw(w);
 	}
@@ -67,6 +69,7 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 	
 	while (w.pollEvent(event))
 	{
+		
 		if (event.type == sf::Event::Closed)
 			w.close();
 		if(event.type==sf::Event::MouseButtonPressed)
@@ -85,9 +88,10 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 
 }
 
-Engine::Engine() :baseScene("resorses/back1.jpg", sf::Vector2f(500,0), sf::Vector2f(1110,500))
-{
+Engine::Engine() :baseScene("resorses/back1.jpg", sf::Vector2f(0,400), sf::Vector2f(1110,500))
 
+{
+	
 
 }
 

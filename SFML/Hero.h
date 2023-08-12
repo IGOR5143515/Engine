@@ -1,5 +1,6 @@
 #pragma once
 #include "Sprite.h"
+
 class Hero :
     public Sprite
 {
@@ -10,9 +11,11 @@ private:
     int distance{};
     
 public:
+    friend class Scenes;
     friend class Engine;
-    sf::FloatRect collisionHero;
+    void setDistance(int n);
     Hero(string,int,int);
     Hero();
+    
 };
 
