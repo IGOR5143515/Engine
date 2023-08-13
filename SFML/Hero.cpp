@@ -16,7 +16,7 @@ Hero::Hero(std::string link,int x,int y) {
     sprite.setOrigin(500, 500);
    
 }
-void Hero::setDistance(int n) { distance = n;
-
+void Hero::setDistance(int n) { 
+    distance = n;
 }
 

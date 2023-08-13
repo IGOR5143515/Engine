@@ -22,27 +22,49 @@ Scenes::Scenes(string s):background(s) {
 
 Scenes::Scenes() {}
 
-void Scenes::ifcoll(Hero &h,Scenes &s) {
+void Scenes::ifcoll(Hero& h, Scenes& s) {
 	sf::FloatRect hero = h.getSprite().getGlobalBounds();
 	sf::FloatRect ob1 = trigger1.getGlobalBounds();
 	sf::FloatRect ob2 = trigger2.getGlobalBounds();
-
+	
 	if (hero.intersects(ob1)) {
-		if (s.selSc == ONE) {
-			std::cout << "W";
+
+		
+		if (selSc == ONE) {
+			std::cout << "Yes" << std::endl;
 			s.background.setSprite("resorses/back2.jpg");
-			h.sprite.setPosition(500, 500);
-			h.setDistance(0);
+			h.sprite.setPosition(1000, 500);
+			p = false;
+			selSc = TWO;
 			
-			s.selSc = TWO;
 			
 		}
-		else if (s.selSc == TWO) {
-			s.background.setSprite("resorses/back1.jpg");
-			
-			s.selSc = ONE;
-		}
+	
+	
+
 
 	}
+	
+	if (hero.intersects(ob1)) {
+
+
+		
+		if (selSc == TWO) {
+			std::cout << "NO" << std::endl;
+			s.background.setSprite("resorses/back2.jpg");
+			h.sprite.setPosition(1000, 500);
+			
+			
+			p = false;
+			selSc = ONE;
+		}
+
+
+
+	}
+	
+
+
 }
+
 

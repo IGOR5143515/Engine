@@ -4,7 +4,6 @@
 void Engine::addSprite(string link, string x, string y) {
 
 	Sprite* a = new Sprite(link);
-
 	arr.push_back(a);
 
 }
@@ -12,40 +11,47 @@ void Engine::addSprite(string link, string x, string y) {
 void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
+	
+	
+		baseScene.ifcoll(hero,baseScene);
 		
+
 		
 		float x = hero.sprite.getPosition().x;
 		float y = hero.sprite.getPosition().y;
+		
 		if (hero.isMove) {
-			
 			hero.distance = sqrt((hero.tempX - hero.sprite.getPosition().x) * (hero.tempX - hero.sprite.getPosition().x) + (hero.tempY - hero.sprite.getPosition().y) * (hero.tempY - hero.sprite.getPosition().y));
 			
 			
-			if (hero.distance > 2) {
-				
-				
+
+			if (hero.distance > 2&& baseScene.p) {
+			
 				x += 1 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
 				y += 1 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
 				hero.sprite.setPosition(x, y);
-				std::cout << hero.distance;
+				
 			}
-			else 
+
+			else {
 				hero.isMove = false;
+				baseScene.p = true;
+			}
 			
-			
+	
 		}
 		
 		
-	
-
-		baseScene.ifcoll(hero, baseScene);
 		input(event,w);
 		draw(w);
+
 	}
 
 
 }
+
 void Engine::draw(sf::RenderWindow &w) {
+
 	w.clear();
 	drawArray(w);
 	w.display();
@@ -69,29 +75,23 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 	
 	while (w.pollEvent(event))
 	{
+
 		
 		if (event.type == sf::Event::Closed)
 			w.close();
 		if(event.type==sf::Event::MouseButtonPressed)
 			if (event.key.code == sf::Mouse::Left) {
+
 				hero.isMove = true;
 				hero.tempX = pos.x;
 				hero.tempY = pos.y;
 				
-				
-
 			}
-		
 		
 	}
 
 
 }
 
-Engine::Engine() :baseScene("resorses/back1.jpg", sf::Vector2f(0,400), sf::Vector2f(1110,500))
-
-{
-	
-
-}
+Engine::Engine() :baseScene("resorses/back1.jpg", sf::Vector2f(-5,400), sf::Vector2f(1110,500)){}
 

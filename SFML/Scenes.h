@@ -3,20 +3,21 @@
 #include"Hero.h"
 
 
+enum selectScenes {
+	ONE,
+	TWO,
+	THEE,
+
+};
 class Scenes
 {
-	enum selectScenes {
-		ONE,
-		TWO,
-		THEE,
 
-	};
 private:
 	sf::RectangleShape trigger1;
 	sf::RectangleShape trigger2;
-	selectScenes selSc=ONE;
-
+	selectScenes selSc=TWO;
 	
+	bool p=true;
 	Sprite background;
 	
 public:
@@ -30,6 +31,8 @@ public:
 
 	void setBackground(Sprite &);
 
-	void ifcoll(Hero&,Scenes&);
+	void ifcoll(Hero&,Scenes &);
+
+	
 };
 

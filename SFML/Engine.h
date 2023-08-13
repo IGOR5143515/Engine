@@ -15,7 +15,7 @@ private:
 	
 public:
 	Engine();
-
+	friend class Scenes;
 	void addSprite(string, string, string);
 
 	void start(sf::RenderWindow&);
