@@ -9,6 +9,8 @@ private:
     int tempX=0;
     int tempY=0;
     int distance{};
+    bool isStandOnTrigget1=false;
+    bool isStandOnTrigget2=false;
     
 public:
     friend class Scenes;

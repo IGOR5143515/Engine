@@ -15,7 +15,7 @@ class Scenes
 private:
 	sf::RectangleShape trigger1;
 	sf::RectangleShape trigger2;
-	selectScenes selSc=TWO;
+	selectScenes selSc=ONE;
 	
 	bool p=true;
 	Sprite background;
