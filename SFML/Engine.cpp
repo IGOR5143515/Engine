@@ -27,8 +27,8 @@ void Engine::start(sf::RenderWindow &w) {
 
 			if (hero.distance > 2&& baseScene.p) {
 			
-				x += 0.15 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
-				y += 0.15 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
+				x += 1 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
+				y += 1 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
 				hero.sprite.setPosition(x, y);
 				
 			}
@@ -108,5 +108,5 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 
 }
 
-Engine::Engine() :baseScene("resorses/back1.jpg", sf::Vector2f(0,0), sf::Vector2f(1200,0)){}
+Engine::Engine() :baseScene("resorses/ONE.png", sf::Vector2f(0,0), sf::Vector2f(1200,0)){}
 

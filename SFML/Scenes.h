@@ -6,7 +6,9 @@
 enum selectScenes {
 	ONE,
 	TWO,
-	THEE,
+	THREE,
+	FOR,
+	FIVE,
 
 };
 class Scenes
