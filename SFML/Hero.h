@@ -15,6 +15,7 @@ private:
 public:
     friend class Scenes;
     friend class Engine;
+    friend class Anim;
     void setDistance(int n);
     Hero(string,int,int);
     Hero();

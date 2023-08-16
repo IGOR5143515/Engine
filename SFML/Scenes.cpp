@@ -110,7 +110,7 @@ void Scenes::ifcoll(Hero& h, Scenes& s) {
 			
 			p = false;
 			selSc = FOR;
-			h.isStandOnTrigget1 = false;
+			h.isStandOnTrigget2 = false;
 
 		}
 		

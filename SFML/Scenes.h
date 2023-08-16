@@ -1,6 +1,7 @@
 #pragma once
 #include"Sprite.h"
 #include"Hero.h"
+#include"Anim.h"
 
 
 enum selectScenes {
@@ -18,7 +19,7 @@ private:
 	sf::RectangleShape trigger1;
 	sf::RectangleShape trigger2;
 	selectScenes selSc=ONE;
-	
+	Anim a;
 	bool p=true;
 	Sprite background;
 	

@@ -11,7 +11,7 @@ void Engine::addSprite(string link, string x, string y) {
 void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
-	
+		cout << hero.sprite.getPosition().x << " " << hero.sprite.getPosition().y << endl;
 	
 		baseScene.ifcoll(hero,baseScene);
 		

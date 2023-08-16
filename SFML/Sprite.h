@@ -15,6 +15,7 @@ private:
 
 public:
 	friend class Scenes;
+	friend class Inventory;
 
 	Sprite() {}
 	Sprite(string);
