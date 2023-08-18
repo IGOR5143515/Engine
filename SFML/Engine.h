@@ -2,12 +2,12 @@
 #include"Sprite.h"
 #include"Hero.h"
 #include"Scenes.h"
-
+#include"Inventory.h"
 
 class Engine
 {
 private:
-	
+	Inventory inv;
 	Hero hero;
 	std::vector<Sprite*>arr{&hero};
 	Scenes baseScene;

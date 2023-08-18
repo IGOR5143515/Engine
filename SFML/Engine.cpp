@@ -11,7 +11,7 @@ void Engine::addSprite(string link, string x, string y) {
 void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
-		cout << hero.sprite.getPosition().x << " " << hero.sprite.getPosition().y << endl;
+		
 	
 		baseScene.ifcoll(hero,baseScene);
 		
@@ -27,8 +27,8 @@ void Engine::start(sf::RenderWindow &w) {
 
 			if (hero.distance > 2&& baseScene.p) {
 			
-				x += 1 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
-				y += 1 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
+				x += 0.25 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
+				y += 0.25 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
 				hero.sprite.setPosition(x, y);
 				
 			}
@@ -59,7 +59,7 @@ void Engine::draw(sf::RenderWindow &w) {
 }
 
 void Engine::drawArray(sf::RenderWindow& w) {
-
+	
 	w.draw(baseScene.getSpriteBack());
 	w.draw(baseScene.trigger1);
 	w.draw(baseScene.trigger2);
@@ -67,6 +67,11 @@ void Engine::drawArray(sf::RenderWindow& w) {
 	{
 		w.draw(arr[i]->getSprite());
 	}
+	for (size_t i = 0; i < inv.arrInv.size(); i++)
+	{
+		w.draw(inv.arrInv[i]->getSprite());
+	}
+	
 }
 
 void Engine::input(sf::Event event,sf::RenderWindow &w) {
@@ -101,6 +106,12 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 
 					hero.isStandOnTrigget2 = true;
 				}
+
+		if (event.type == sf::Event::KeyPressed)
+			if (event.key.code == sf::Keyboard::R) {
+			
+				cout << "KeyPressed" << endl;
+			}
 		
 		
 	}

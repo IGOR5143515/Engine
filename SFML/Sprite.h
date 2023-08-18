@@ -7,11 +7,10 @@ using namespace std;
 class Sprite
 {
 protected:
-
+	std::string iden;
 	sf::Texture texture;
 	sf::Sprite sprite;
 private:
-
 
 public:
 	friend class Scenes;
@@ -21,6 +20,10 @@ public:
 	Sprite(string);
 	sf::Sprite getSprite();
 	void setSprite(string link);
+
+	std::string getIden() {
+		return iden;
+	}
 
 };
 
