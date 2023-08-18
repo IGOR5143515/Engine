@@ -12,7 +12,7 @@ void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
 		
-	
+		inv.position();
 		baseScene.ifcoll(hero,baseScene);
 		
 
@@ -70,6 +70,7 @@ void Engine::drawArray(sf::RenderWindow& w) {
 	for (size_t i = 0; i < inv.arrInv.size(); i++)
 	{
 		w.draw(inv.arrInv[i]->getSprite());
+		
 	}
 	
 }
@@ -109,10 +110,17 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 
 		if (event.type == sf::Event::KeyPressed)
 			if (event.key.code == sf::Keyboard::R) {
-			
+				inv.dellItem();
 				cout << "KeyPressed" << endl;
 			}
 		
+		if (event.type == sf::Event::KeyPressed)
+			if (event.key.code == sf::Keyboard::Q) {
+				
+				inv.addItem();
+				cout << "KeyPressed" << endl;
+				
+			}
 		
 	}
 

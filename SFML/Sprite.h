@@ -6,8 +6,12 @@ using namespace std;
 
 class Sprite
 {
+
+
+	
+
 protected:
-	std::string iden;
+	
 	sf::Texture texture;
 	sf::Sprite sprite;
 private:
@@ -15,7 +19,7 @@ private:
 public:
 	friend class Scenes;
 	friend class Inventory;
-
+	std::string iden;
 	Sprite() {}
 	Sprite(string);
 	sf::Sprite getSprite();
@@ -24,6 +28,6 @@ public:
 	std::string getIden() {
 		return iden;
 	}
-
+	
 };
 
