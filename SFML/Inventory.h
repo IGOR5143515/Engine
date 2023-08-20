@@ -6,23 +6,15 @@ class Inventory
 
 {
 private:
+	int step = 100;
 	std::string name;
-	Items axx;
-	Items ayy;
-	Items azz;
-	std::vector<Sprite*>arrInv{&ayy};
+	
+	std::vector<Sprite*>arrInv{};
 public:
 	void position();
-	void addItem();
+	void addItem(std::string,string);
 	friend class Engine;
-	Inventory():axx("resorses/shield.png","Shield"),
-		ayy("resorses/beer.png", "Beer"),
-		azz("resorses/cross.png", "Cross") {
-
-		ayy.setPos(100, 500);
-		azz.setPos(100, 200);
-
-	}
+	Inventory(){}
 	void dellItem();
 	
 

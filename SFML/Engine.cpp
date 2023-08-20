@@ -12,7 +12,7 @@ void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
 		
-		inv.position();
+		
 		baseScene.ifcoll(hero,baseScene);
 		
 
@@ -44,7 +44,7 @@ void Engine::start(sf::RenderWindow &w) {
 		
 		input(event,w);
 		draw(w);
-
+		
 	}
 
 
@@ -117,9 +117,16 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 		if (event.type == sf::Event::KeyPressed)
 			if (event.key.code == sf::Keyboard::Q) {
 				
-				inv.addItem();
+				inv.addItem("resorses/beer.png","Beer");
 				cout << "KeyPressed" << endl;
 				
+			}
+		if (event.type == sf::Event::KeyPressed)
+			if (event.key.code == sf::Keyboard::T) {
+
+				inv.addItem("resorses/shield.png","Shield");
+				cout << "KeyPressed" << endl;
+
 			}
 		
 	}
