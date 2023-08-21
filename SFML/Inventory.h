@@ -6,6 +6,7 @@ class Inventory
 
 {
 private:
+	int memoryPosition;
 	int step = 100;
 	std::string name;
 	

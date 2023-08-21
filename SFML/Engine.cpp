@@ -111,21 +111,19 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 		if (event.type == sf::Event::KeyPressed)
 			if (event.key.code == sf::Keyboard::R) {
 				inv.dellItem();
-				cout << "KeyPressed" << endl;
 			}
 		
 		if (event.type == sf::Event::KeyPressed)
 			if (event.key.code == sf::Keyboard::Q) {
 				
 				inv.addItem("resorses/beer.png","Beer");
-				cout << "KeyPressed" << endl;
 				
 			}
 		if (event.type == sf::Event::KeyPressed)
 			if (event.key.code == sf::Keyboard::T) {
 
 				inv.addItem("resorses/shield.png","Shield");
-				cout << "KeyPressed" << endl;
+				
 
 			}
 		
