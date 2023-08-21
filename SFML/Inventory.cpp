@@ -4,8 +4,8 @@
 
 void Inventory::addItem(std::string s,std::string type) {
 	
-		Items* i = new Items(s, type);
-		i->sprite.setPosition(step, 500);
+	Items* i = new Items(s, type);
+	i->sprite.setPosition(step, 500);
 	
 	arrInv.push_back(i);
 	step += 400;
@@ -36,3 +36,34 @@ void Inventory::dellItem() {
 	
 
 }
+
+void Inventory::moveSprite(sf:: Event &e,sf::RenderWindow &w, sf::Vector2f pos) {
+	
+	std::string indentification;
+	Sprite* copy{};
+	if (e.type == sf::Event::MouseButtonPressed)
+		if (e.key.code == sf::Mouse::Left) {
+			for (size_t i = 0; i < arrInv.size(); i++)
+			{
+				cout << "qwe" << endl;
+				if (arrInv[i]->sprite.getGlobalBounds().contains(pos.x, pos.y) && arrInv[i]->iden == "Beer") {
+					
+					isMove = true;
+					indentification = arrInv[i]->iden;
+					copy = arrInv[i];
+				}
+			}
+		}
+	if (e.type == sf::Event::MouseButtonReleased)
+		if (e.key.code == sf::Mouse::Left)
+			isMove = false;
+
+
+	if (isMove) {
+		
+		copy->sprite.setPosition(pos.x, pos.y);
+	
+	}
+
+}
+

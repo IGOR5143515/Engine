@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include"Engine.h"
+
 void Engine::addSprite(string link, string x, string y) {
 
 	Sprite* a = new Sprite(link);
@@ -11,15 +12,13 @@ void Engine::addSprite(string link, string x, string y) {
 void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
-		
-		
+	
 		baseScene.ifcoll(hero,baseScene);
 		
-
+		
 		
 		float x = hero.sprite.getPosition().x;
 		float y = hero.sprite.getPosition().y;
-		
 		if (hero.isMove) {
 			hero.distance = sqrt((hero.tempX - hero.sprite.getPosition().x) * (hero.tempX - hero.sprite.getPosition().x) + (hero.tempY - hero.sprite.getPosition().y) * (hero.tempY - hero.sprite.getPosition().y));
 			
@@ -81,7 +80,7 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 	
 	while (w.pollEvent(event))
 	{
-
+		inv.moveSprite(event, w,pos);
 		
 		if (event.type == sf::Event::Closed)
 			w.close();

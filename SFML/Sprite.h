@@ -13,10 +13,11 @@ class Sprite
 protected:
 	
 	sf::Texture texture;
-	sf::Sprite sprite;
+	
 private:
 
 public:
+	sf::Sprite sprite;
 	friend class Scenes;
 	friend class Inventory;
 	std::string iden;
