@@ -19,15 +19,15 @@ void Engine::start(sf::RenderWindow &w) {
 		
 		float x = hero.sprite.getPosition().x;
 		float y = hero.sprite.getPosition().y;
-		if (hero.isMove) {
+		if (hero.isMove&&hero.touch==false) {
 			hero.distance = sqrt((hero.tempX - hero.sprite.getPosition().x) * (hero.tempX - hero.sprite.getPosition().x) + (hero.tempY - hero.sprite.getPosition().y) * (hero.tempY - hero.sprite.getPosition().y));
 			
 			
 
 			if (hero.distance > 2&& baseScene.p) {
 			
-				x += 0.25 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
-				y += 0.25 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
+				x += 1 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
+				y += 1 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
 				hero.sprite.setPosition(x, y);
 				
 			}
@@ -80,12 +80,12 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 	
 	while (w.pollEvent(event))
 	{
-		inv.moveSprite(event, w,pos);
+		inv.moveSprite(hero,w,pos,event);
 		
 		if (event.type == sf::Event::Closed)
 			w.close();
-		if(event.type==sf::Event::MouseButtonPressed)
-			if (event.key.code == sf::Mouse::Left) {
+		if (event.type == sf::Event::MouseButtonPressed)
+			if (event.key.code == sf::Mouse::Left && hero.touch==false) {
 
 				hero.isMove = true;
 				hero.tempX = pos.x;

@@ -2,11 +2,12 @@
 #include<vector>
 #include"Sprite.h"
 #include"Items.h"
+#include"Hero.h"
 class Inventory
 
 {
 private:
-
+	Sprite* copy{};
 	int step = 100;
 	std::string name;
 	bool isMove = false;
@@ -18,7 +19,7 @@ public:
 	Inventory() {}
 	void dellItem();
 
-	void moveSprite(sf::Event &e, sf::RenderWindow& w, sf::Vector2f pos);
+	void moveSprite(Hero &h,sf::RenderWindow& w, sf::Vector2f pos,sf::Event);
 
 	
 

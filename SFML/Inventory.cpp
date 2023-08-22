@@ -37,27 +37,36 @@ void Inventory::dellItem() {
 
 }
 
-void Inventory::moveSprite(sf:: Event &e,sf::RenderWindow &w, sf::Vector2f pos) {
+void Inventory::moveSprite(Hero& h, sf::RenderWindow &w, sf::Vector2f pos,sf::Event e) {
 	
-	std::string indentification;
-	Sprite* copy{};
+	int posx = h.sprite.getPosition().x;
+	int posy = h.sprite.getPosition().y;
+	
 	if (e.type == sf::Event::MouseButtonPressed)
 		if (e.key.code == sf::Mouse::Left) {
 			for (size_t i = 0; i < arrInv.size(); i++)
 			{
 				cout << "qwe" << endl;
-				if (arrInv[i]->sprite.getGlobalBounds().contains(pos.x, pos.y) && arrInv[i]->iden == "Beer") {
+				if (arrInv[i]->sprite.getGlobalBounds().contains(pos.x, pos.y) && arrInv[i]->iden == "Beer") {								 //move inventory
 					
 					isMove = true;
-					indentification = arrInv[i]->iden;
+					h.touch = true;
+					copy = arrInv[i];
+				}
+				if (arrInv[i]->sprite.getGlobalBounds().contains(pos.x, pos.y) && arrInv[i]->iden == "Shield") {
+
+					isMove = true;
+				
 					copy = arrInv[i];
 				}
 			}
 		}
 	if (e.type == sf::Event::MouseButtonReleased)
-		if (e.key.code == sf::Mouse::Left)
+		if (e.key.code == sf::Mouse::Left) {
+			h.sprite.setPosition(posx, posy);
 			isMove = false;
-
+			h.touch = false;
+		}
 
 	if (isMove) {
 		
