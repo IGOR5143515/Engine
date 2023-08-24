@@ -13,6 +13,7 @@ void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
 	
+	
 		baseScene.ifcoll(hero,baseScene);
 		
 		
@@ -26,8 +27,8 @@ void Engine::start(sf::RenderWindow &w) {
 
 			if (hero.distance > 2&& baseScene.p) {
 			
-				x += 1 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
-				y += 1 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
+				x += 0.50 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
+				y += 0.50 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
 				hero.sprite.setPosition(x, y);
 				
 			}
@@ -71,7 +72,7 @@ void Engine::drawArray(sf::RenderWindow& w) {
 		w.draw(inv.arrInv[i]->getSprite());
 		
 	}
-	
+	w.draw(dialog.getText());
 }
 
 void Engine::input(sf::Event event,sf::RenderWindow &w) {
@@ -80,8 +81,13 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 	
 	while (w.pollEvent(event))
 	{
+		dialog.Position(pos);
 		inv.moveSprite(hero,w,pos,event);
 		
+		if (event.type == sf::Event::KeyPressed)
+			if (event.key.code == sf::Keyboard::Escape) 
+				w.close();
+				
 		if (event.type == sf::Event::Closed)
 			w.close();
 		if (event.type == sf::Event::MouseButtonPressed)
@@ -118,18 +124,21 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 				inv.addItem("resorses/beer.png","Beer");
 				
 			}
+		
 		if (event.type == sf::Event::KeyPressed)
-			if (event.key.code == sf::Keyboard::T) {
+			if (event.key.code == sf::Keyboard::Num1) {
 
-				inv.addItem("resorses/shield.png","Shield");
-				
+				dialog.dialogSwitcher +=1;
+				cout << "1" << endl;
+				if (dialog.dialogSwitcher > 1)
+					dialog.dialogSwitcher = 0;
 
 			}
 		
 	}
-
-
 }
 
-Engine::Engine() :baseScene("resorses/ONE.png", sf::Vector2f(0,0), sf::Vector2f(1200,0)){}
+Engine::Engine() :baseScene("resorses/ONE.png", sf::Vector2f(0,0),
+	sf::Vector2f(1200,0)),
+	dialog("Hello World!",sf::Vector2f(100,100)) {}
 

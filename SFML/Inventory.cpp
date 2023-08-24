@@ -8,7 +8,7 @@ void Inventory::addItem(std::string s,std::string type) {
 	i->sprite.setPosition(step, 500);
 	
 	arrInv.push_back(i);
-	step += 400;
+	step += 200;
 }
 
 void Inventory::position() {
@@ -17,7 +17,7 @@ void Inventory::position() {
 	{
 		
 		arrInv[i]->sprite.setPosition(100+step, 500);
-		step += 400;
+		step += 200;
 	}
 }
 
@@ -46,24 +46,27 @@ void Inventory::moveSprite(Hero& h, sf::RenderWindow &w, sf::Vector2f pos,sf::Ev
 		if (e.key.code == sf::Mouse::Left) {
 			for (size_t i = 0; i < arrInv.size(); i++)
 			{
+				
 				cout << "qwe" << endl;
 				if (arrInv[i]->sprite.getGlobalBounds().contains(pos.x, pos.y) && arrInv[i]->iden == "Beer") {								 //move inventory
 					
 					isMove = true;
 					h.touch = true;
 					copy = arrInv[i];
+					
 				}
 				if (arrInv[i]->sprite.getGlobalBounds().contains(pos.x, pos.y) && arrInv[i]->iden == "Shield") {
 
 					isMove = true;
-				
+					h.touch = true;
 					copy = arrInv[i];
+					
 				}
 			}
 		}
 	if (e.type == sf::Event::MouseButtonReleased)
 		if (e.key.code == sf::Mouse::Left) {
-			h.sprite.setPosition(posx, posy);
+			position();
 			isMove = false;
 			h.touch = false;
 		}

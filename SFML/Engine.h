@@ -3,7 +3,7 @@
 #include"Hero.h"
 #include"Scenes.h"
 #include"Inventory.h"
-
+#include"Dialogs.h"
 class Engine
 {
 private:
@@ -11,7 +11,7 @@ private:
 	Hero hero;
 	std::vector<Sprite*>arr{&hero};
 	Scenes baseScene;
-	
+	Dialogs dialog;
 	
 	
 public:
