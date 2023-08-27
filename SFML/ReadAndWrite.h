@@ -4,8 +4,6 @@
 #include<iostream>
 using namespace std;
 
-
-
 class ReadAndWrite {
 private:
 	string nameOfFileX;
@@ -26,8 +24,6 @@ public:
 		nameOfFileY = "0";
 	}
 	
-
-
 	void read(sf::Sprite &); //for write coordinate to file
 	void write(sf::Sprite);  // for read coordinate from file
 

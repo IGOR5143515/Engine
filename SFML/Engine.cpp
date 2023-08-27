@@ -13,7 +13,7 @@ void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
 	
-	
+		cout << characters.arrPersons[0].GetHero().getPosition().x << endl;
 		baseScene.ifcoll(hero,baseScene);
 		
 		
@@ -27,8 +27,8 @@ void Engine::start(sf::RenderWindow &w) {
 
 			if (hero.distance > 2&& baseScene.p) {
 			
-				x += 0.50 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
-				y += 0.50 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
+				x += 0.09 * (hero.tempX - hero.sprite.getPosition().x) / hero.distance;
+				y += 0.09 * (hero.tempY - hero.sprite.getPosition().y) / hero.distance;
 				hero.sprite.setPosition(x, y);
 				
 			}
@@ -73,6 +73,10 @@ void Engine::drawArray(sf::RenderWindow& w) {
 		
 	}
 	w.draw(dialog.getText());
+	for (size_t i = 0; i < characters.arrPersons.size(); i++)
+	{
+		w.draw(characters.arrPersons[i].GetHero());
+	}
 }
 
 void Engine::input(sf::Event event,sf::RenderWindow &w) {
@@ -125,20 +129,11 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 				
 			}
 		
-		if (event.type == sf::Event::KeyPressed)
-			if (event.key.code == sf::Keyboard::Num1) {
-
-				dialog.dialogSwitcher +=1;
-				cout << "1" << endl;
-				if (dialog.dialogSwitcher > 1)
-					dialog.dialogSwitcher = 0;
-
-			}
+		
 		
 	}
 }
 
-Engine::Engine() :baseScene("resorses/ONE.png", sf::Vector2f(0,0),
-	sf::Vector2f(1200,0)),
-	dialog("Hello World!",sf::Vector2f(100,100)) {}
+Engine::Engine() :baseScene("resorses/ONE.png", sf::Vector2f(0, 0),
+	sf::Vector2f(1200, 0)) {}
 

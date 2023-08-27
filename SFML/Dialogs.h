@@ -1,16 +1,18 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include"Hero.h"
+
 class Dialogs
 {
 private:
 	sf::Font font;
 	sf::Text text;
 	int dialogSwitcher{};
-	std::vector<std::string>dialog;
+	
 public:
+	std::vector<std::string>dialog{ "1" };
 	friend class Engine;
-	Dialogs(std::string str, sf::Vector2f vec);
+	Dialogs();
 	sf::Text getText();
 	void Position(sf::Vector2f);
 };

@@ -4,11 +4,7 @@
 #include<fstream>
 using namespace std;
 
-class Sprite
-{
-
-
-	
+class Sprite{
 
 protected:
 	sf::Texture texture;
@@ -16,7 +12,6 @@ protected:
 private:
 
 public:
-	
 	friend class Scenes;
 	friend class Inventory;
 	std::string iden;

@@ -5,18 +5,20 @@ Hero::Hero() {
     sprite.setTexture(texture);
     sprite.scale(0.25, 0.25);
     sprite.setOrigin(500,500);
-    sprite.setPosition(0, 200);
+    sprite.setPosition(0, 0);
     
 }
 
-Hero::Hero(std::string link,int x,int y) {
+Hero::Hero(std::string link,sf::Vector2f vec) {
     texture.loadFromFile(link);
     sprite.setTexture(texture);
-    sprite.setPosition(x, y);
+    sprite.setPosition(vec.x, vec.y);
     sprite.setOrigin(500, 500);
    
 }
 void Hero::setDistance(int n) { 
     distance = n;
 }
+
+
 

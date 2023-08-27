@@ -136,11 +136,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Anim.cpp" />
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="Dialogs.cpp" />
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Persons.cpp" />
+    <ClCompile Include="Quests.cpp" />
     <ClCompile Include="ReadAndWrite.cpp" />
     <ClCompile Include="Scenes.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -149,10 +152,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Anim.h" />
+    <ClInclude Include="Character.h" />
     <ClInclude Include="Dialogs.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Items.h" />
+    <ClInclude Include="Persons.h" />
+    <ClInclude Include="Quests.h" />
     <ClInclude Include="ReadAndWrite.h" />
     <ClInclude Include="Scenes.h" />
     <ClInclude Include="Sprite.h" />

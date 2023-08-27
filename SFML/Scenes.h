@@ -14,7 +14,6 @@ enum selectScenes {
 };
 class Scenes
 {
-
 private:
 	sf::RectangleShape trigger1;
 	sf::RectangleShape trigger2;

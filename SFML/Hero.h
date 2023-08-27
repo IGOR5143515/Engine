@@ -18,8 +18,9 @@ public:
     friend class Anim;
     friend class Inventory;
     void setDistance(int n);
-    Hero(string,int,int);
+    Hero(string,sf::Vector2f);
     Hero();
+    sf::Sprite getsprite() { return getSprite(); }
     
 };
 

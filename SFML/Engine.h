@@ -4,6 +4,7 @@
 #include"Scenes.h"
 #include"Inventory.h"
 #include"Dialogs.h"
+#include"Persons.h"
 class Engine
 {
 private:
@@ -12,7 +13,7 @@ private:
 	std::vector<Sprite*>arr{&hero};
 	Scenes baseScene;
 	Dialogs dialog;
-	
+	Persons characters;
 	
 public:
 	Engine();
