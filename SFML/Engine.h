@@ -9,10 +9,15 @@ class Engine
 {
 private:
 	Inventory inv;
+
 	Hero hero;
+
 	std::vector<Sprite*>arr{&hero};
+
 	Scenes baseScene;
+
 	Dialogs dialog;
+
 	Persons characters;
 	
 public:

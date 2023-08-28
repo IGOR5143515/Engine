@@ -5,7 +5,7 @@
 class Character
 {
 private:
-	Dialogs dialog;
+	
 	Hero name;
 	Quests quests;
 public:
