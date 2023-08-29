@@ -8,9 +8,9 @@ Dialogs::Dialogs() {
 	
 }
 
-sf::Text Dialogs::getText() {
+sf::Text Dialogs::getText(std::vector<std::string> arr, int type) {
 	text.setFillColor(sf::Color::Green);
-	text.setString(dialog[dialogSwitcher]);
+	text.setString(arr[type]);
 	return text;
 	
 }

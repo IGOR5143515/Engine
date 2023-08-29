@@ -47,7 +47,7 @@ void Inventory::moveSprite(Hero& h, sf::RenderWindow &w, sf::Vector2f pos,sf::Ev
 			for (size_t i = 0; i < arrInv.size(); i++)
 			{
 				
-				cout << "qwe" << endl;
+				
 				if (arrInv[i]->sprite.getGlobalBounds().contains(pos.x, pos.y) && arrInv[i]->iden == "Beer") {								 //move inventory
 					
 					isMove = true;

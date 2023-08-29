@@ -16,7 +16,7 @@ private:
 
 	Scenes baseScene;
 
-	Dialogs dialog;
+	
 
 	Persons characters;
 	

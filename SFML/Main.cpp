@@ -11,7 +11,7 @@ int main()
 	resolution.y = sf::VideoMode::getDesktopMode().height;
 
 	w.create(sf::VideoMode(resolution.x, resolution.y),
-		"Simple Game Engine",
+		"Game Engine",
 		sf::Style::Fullscreen);
 	Engine t;
 

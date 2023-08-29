@@ -14,9 +14,11 @@ void Engine::start(sf::RenderWindow &w) {
 	sf::Event event {};
 	while (w.isOpen()) {
 	
+		characters.personPosition(baseScene);
 		
 		baseScene.ifcoll(hero,baseScene);
 		
+	
 		float x = hero.sprite.getPosition().x;
 		float y = hero.sprite.getPosition().y;
 
@@ -72,11 +74,14 @@ void Engine::drawArray(sf::RenderWindow& w) {
 		
 	}
 
-	w.draw(dialog.getText());
+	
 	for (size_t i = 0; i < characters.arrPersons.size(); i++)
 	{
 		w.draw(characters.arrPersons[i].GetHero());
 	}
+
+	w.draw(characters.printDialogs());
+
 }
 
 void Engine::input(sf::Event event,sf::RenderWindow &w) {
@@ -86,7 +91,7 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 	
 	while (w.pollEvent(event))
 	{
-		dialog.Position(pos);
+		
 		inv.moveSprite(hero,w,pos,event);
 		
 		if (event.type == sf::Event::KeyPressed)

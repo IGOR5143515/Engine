@@ -1,4 +1,4 @@
-#pragma once
+ #pragma once
 #include <SFML/Graphics.hpp>
 #include"Hero.h"
 
@@ -10,10 +10,11 @@ private:
 	int dialogSwitcher{};
 	
 public:
+
 	std::vector<std::string>dialog{ "1" };
 	friend class Engine;
 	Dialogs();
-	sf::Text getText();
+	sf::Text getText(std::vector<std::string>,int);
 	void Position(sf::Vector2f);
 };
 

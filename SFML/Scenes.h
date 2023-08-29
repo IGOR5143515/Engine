@@ -23,7 +23,8 @@ private:
 	Sprite background;
 	
 public:
-	
+
+	friend class Persons;
 	friend class Engine;
 	Scenes();
 	Scenes(string, sf::Vector2f, sf::Vector2f);

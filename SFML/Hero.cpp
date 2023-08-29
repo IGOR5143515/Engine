@@ -30,5 +30,10 @@ void Hero::setDistance(int n) {
 
 }
 
+void Hero::setPos(sf::Vector2f vec) {
+
+    sprite.setPosition(vec.x, vec.y);
+
+}
 
 

@@ -11,7 +11,8 @@ private:
 public:
 	Character(std::string link, sf::Vector2f);
 	sf::Sprite GetHero() { return name.getSprite(); }
-	void pos(sf::Vector2f vec);
+	
+	void position(sf::Vector2f);
 	
 };
 

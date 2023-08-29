@@ -14,6 +14,7 @@ private:
 public:
 	friend class Scenes;
 	friend class Inventory;
+	friend class Persons;
 	std::string iden;
 	Sprite() {}
 	Sprite(string);

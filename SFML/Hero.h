@@ -17,10 +17,13 @@ public:
     friend class Engine;
     friend class Anim;
     friend class Inventory;
+    friend class Persons;
+    friend class Character;
     void setDistance(int n);
     Hero(string,sf::Vector2f);
     Hero();
     sf::Sprite getsprite() { return getSprite(); }
+    void setPos(sf::Vector2f);
     
 };
 
