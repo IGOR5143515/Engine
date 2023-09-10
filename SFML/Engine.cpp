@@ -12,13 +12,13 @@ void Engine::addSprite(string link, string x, string y) {
 void Engine::start(sf::RenderWindow &w) {
 
 	sf::Event event {};
+
 	while (w.isOpen()) {
-	
-		characters.personPosition(baseScene);
+
+		characters.ch.GetHero().setPosition(599, 599);
 		
 		baseScene.ifcoll(hero,baseScene);
 		
-	
 		float x = hero.sprite.getPosition().x;
 		float y = hero.sprite.getPosition().y;
 
@@ -50,7 +50,7 @@ void Engine::start(sf::RenderWindow &w) {
 }
 
 void Engine::draw(sf::RenderWindow &w) {
-
+	
 	w.clear();
 	drawArray(w);
 	w.display();
@@ -74,11 +74,7 @@ void Engine::drawArray(sf::RenderWindow& w) {
 		
 	}
 
-	
-	for (size_t i = 0; i < characters.arrPersons.size(); i++)
-	{
-		w.draw(characters.arrPersons[i].GetHero());
-	}
+	w.draw(characters.ch.GetHero());
 
 	w.draw(characters.printDialogs());
 
@@ -140,5 +136,6 @@ void Engine::input(sf::Event event,sf::RenderWindow &w) {
 }
 
 Engine::Engine() :baseScene("resorses/ONE.png", sf::Vector2f(0, 0),
+
 	sf::Vector2f(1200, 0)) {}
 

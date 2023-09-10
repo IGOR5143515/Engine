@@ -8,6 +8,5 @@ public:
 
 	void walkAnim(Hero&);
 
-
 };
 

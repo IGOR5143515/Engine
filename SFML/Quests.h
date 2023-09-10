@@ -2,6 +2,7 @@
 class Quests
 {
 public:
+
 	bool one=false;
 	bool two = false;
 	bool three = false;

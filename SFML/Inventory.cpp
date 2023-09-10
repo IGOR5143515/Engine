@@ -9,16 +9,21 @@ void Inventory::addItem(std::string s,std::string type) {
 	
 	arrInv.push_back(i);
 	step += 200;
+
 }
 
 void Inventory::position() {
+
 	int step = 0;
+
 	for (size_t i = 0; i < arrInv.size(); i++)
 	{
 		
 		arrInv[i]->sprite.setPosition(100+step, 500);
 		step += 200;
+
 	}
+
 }
 
 void Inventory::dellItem() {
@@ -33,7 +38,6 @@ void Inventory::dellItem() {
 	position();
 
 	std::cout << arrInv.size();
-	
 
 }
 
@@ -64,6 +68,7 @@ void Inventory::moveSprite(Hero& h, sf::RenderWindow &w, sf::Vector2f pos,sf::Ev
 				}
 			}
 		}
+
 	if (e.type == sf::Event::MouseButtonReleased)
 		if (e.key.code == sf::Mouse::Left) {
 			position();

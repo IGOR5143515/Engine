@@ -5,10 +5,8 @@ Scenes::Scenes(string link, sf::Vector2f tr1, sf::Vector2f tr2):background(link)
 
 	trigger1.setPosition(tr1);
 	trigger2.setPosition(tr2);
-
 	trigger1.setSize(sf::Vector2f(100,1000));
 	trigger2.setSize(sf::Vector2f(100, 1000));
-
 	trigger1.setFillColor(sf::Color::Transparent);
 	
 }
@@ -16,10 +14,10 @@ Scenes::Scenes(string link, sf::Vector2f tr1, sf::Vector2f tr2):background(link)
 void Scenes::setBackground(Sprite &s) {
 
 	s.sprite = background.sprite;
+
 }
 
 Scenes::Scenes(string s):background(s) {}
-
 Scenes::Scenes() {}
 
 void Scenes::ifcoll(Hero& h, Scenes& s) {
@@ -52,6 +50,7 @@ void Scenes::ifcoll(Hero& h, Scenes& s) {
 			p = false;
 			selSc = THREE;
 			h.isStandOnTrigget1 = false;
+
 		}
 
 	}
@@ -66,6 +65,7 @@ void Scenes::ifcoll(Hero& h, Scenes& s) {
 			p = false;
 			selSc = FOR;
 			h.isStandOnTrigget1 = false;
+
 		}
 
 	}
@@ -80,6 +80,7 @@ void Scenes::ifcoll(Hero& h, Scenes& s) {
 			p = false;
 			h.isStandOnTrigget1 = false;
 			h.sprite.setPosition(1000, 500);
+
 		}
 
 	}
@@ -100,6 +101,7 @@ void Scenes::ifcoll(Hero& h, Scenes& s) {
 	}
 
 	if (hero.intersects(ob2) && h.isStandOnTrigget2 == true) {
+
 		if (selSc == FOR) {
 
 			std::cout << "Yes2" << std::endl;
@@ -110,6 +112,7 @@ void Scenes::ifcoll(Hero& h, Scenes& s) {
 			h.isStandOnTrigget2 = false;
 
 		}
+
 	}
 
 	if (hero.intersects(ob2) && h.isStandOnTrigget2 == true) {
@@ -128,6 +131,7 @@ void Scenes::ifcoll(Hero& h, Scenes& s) {
 	}
 
 	if (hero.intersects(ob2) && h.isStandOnTrigget2 == true) {
+
 		if (selSc == TWO) {
 
 			std::cout << "Yes4" << std::endl;

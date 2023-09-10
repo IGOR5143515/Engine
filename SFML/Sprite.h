@@ -2,19 +2,25 @@
 #include <SFML/Graphics.hpp>
 #include<string>
 #include<fstream>
+
 using namespace std;
 
 class Sprite{
 
 protected:
+
 	sf::Texture texture;
-	sf::Sprite sprite;
+	
 private:
 
 public:
+
+	sf::Sprite sprite;
+
 	friend class Scenes;
 	friend class Inventory;
 	friend class Persons;
+
 	std::string iden;
 	Sprite() {}
 	Sprite(string);
@@ -22,7 +28,9 @@ public:
 	void setSprite(string link);
 
 	std::string getIden() {
+
 		return iden;
+
 	}
 	
 };

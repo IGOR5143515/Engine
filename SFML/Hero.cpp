@@ -1,6 +1,7 @@
 #include "Hero.h"
 #include<iostream>
 Hero::Hero() {
+
     texture.loadFromFile("resorses/img2.png.png");
 
     sprite.setTexture(texture);
@@ -20,8 +21,6 @@ Hero::Hero(std::string link,sf::Vector2f vec) {
 
     sprite.setPosition(vec.x, vec.y);
 
-    
-   
 }
 
 void Hero::setDistance(int n) { 

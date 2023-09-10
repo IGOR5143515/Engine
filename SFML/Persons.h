@@ -3,16 +3,15 @@
 #include"Scenes.h"
 class Persons
 {
-private:
-	Character Pop;
-	Character Gop;
-	
+
 public:
-	Persons( );
-	void personPosition(Scenes&);
-	std::vector<Character>arrPersons{Pop, Gop};
+	Persons();
+	Character ch;
+	
 	std::vector<std::string>popDialogs{"wawdawd", "awdawdawd"};
 	Dialogs dialogs;
 	sf::Text printDialogs();
+	
+	
 };
 

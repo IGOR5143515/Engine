@@ -5,6 +5,7 @@
 class Dialogs
 {
 private:
+
 	sf::Font font;
 	sf::Text text;
 	int dialogSwitcher{};
@@ -16,5 +17,6 @@ public:
 	Dialogs();
 	sf::Text getText(std::vector<std::string>,int);
 	void Position(sf::Vector2f);
+
 };
 
